@@ -49,7 +49,7 @@ class AdapterTest extends \Test\TestCase {
 	public function tearDown() {
 		// remove columns from the appconfig table
 		$table = $this->conn->getPrefix() . 'appconfig';
-		$this->conn->executeUpdate("DELETE FROM $table WHERE appid LIKE `testadapter-%`");
+		$this->conn->executeUpdate("DELETE FROM $table WHERE `appid` LIKE `?`", ['testadapter-%']);
 	}
 
 	/**
