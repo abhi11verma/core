@@ -385,7 +385,7 @@ class Encryption extends Wrapper {
 		$header = $this->getHeader($path);
 		$signed = (isset($header['signed']) && $header['signed'] === 'true') ? true : false;
 		$fullPath = $this->getFullPath($path);
-		$encryptionModuleId = ($encryptionEnabled) ? $this->util->getEncryptionModuleId($header): "";
+		$encryptionModuleId = $this->util->getEncryptionModuleId($header);
 
 		if ($this->util->isExcluded($fullPath) === false) {
 
